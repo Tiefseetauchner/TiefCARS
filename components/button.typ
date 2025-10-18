@@ -1,24 +1,15 @@
-#let button(variant, body) = {
+#let button(variant, inset: none, body) = {
   context {
     let theme = state("theme-state").final()
-    let selected-variant = if variant == 0 {
-      theme.accent.a-0
-    } else if variant == 1 {
-      theme.accent.a-1
-    } else if variant == 2 {
-      theme.accent.a-2
-    } else if variant == 3 {
-      theme.accent.a-3
-    } else if variant == 4 {
-      theme.accent.a-4
-    } else {
-      assert(true, "Selected button variant '" + variant + "' is not available.")
+    let selected-variant = theme.accent.at("a-" + str(variant))
+    if inset == none {
+      inset = (y: 8pt, x: 16pt)
     }
 
     set text(fill: theme.elem-fg)
 
     box(
-      inset: (y: 8pt, x: 16pt),
+      inset: inset,
       fill: selected-variant,
       radius: 4pt,
     )[
