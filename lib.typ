@@ -1,14 +1,16 @@
-#import "core/theming.typ": apply-theme, tng-theme-dark
-#import "components/button.typ": l-button
+#import "core/theming.typ" as core
+#import "components/button.typ" as buttons
+#import "components/sidebar.typ" as sidebar
 
-#let theme-state = state("theme-state", tng-theme-dark)
-#let button = l-button
+#let theme-state = state("theme-state")
 
 #let lcars(
   theme: "tng",
   body,
 ) = {
-  apply-theme(theme)
+  core.apply-theme(theme)
+
+  set text(font: "Antonio", size: 10.5pt)
 
   context {
     let theme = theme-state.final()
