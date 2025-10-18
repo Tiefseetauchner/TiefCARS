@@ -1,12 +1,12 @@
 [package]
-name = "tieflied"
-version = "0.2.1"
+name = "tiefcars"
+version = "0.1.0"
 compiler = "0.13.1"
 authors = ["Lena Tauchner"]
 entrypoint = "lib.typ"
 license = "MIT"
-description = "Song book template (Liederbuch)"
-keywords = ["music", "songs"]
+description = "An LCARS-inspired layouting system."
+keywords = []
 categories = ["layout", "fun"]
 disciplines = []
 

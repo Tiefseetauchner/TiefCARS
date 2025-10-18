@@ -17,7 +17,9 @@ REQUIRED_FILES=(
     "LICENSE"
     "lib.typ"
     "thumbnail.png"
-    "template"
+    "template/"
+    "components/"
+    "core/"
 )
 
 for item in "${REQUIRED_FILES[@]}"; do
