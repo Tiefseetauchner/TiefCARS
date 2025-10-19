@@ -6,7 +6,7 @@
 
 #let sidebar-button(height, width, color: none, elem-text: none) = {
   context {
-    let theme = state("theme-state").final()
+    let theme = state("theme-state").get()
     set text(fill: theme.elem-fg)
 
     let sel-color
@@ -35,7 +35,7 @@
   button-texts: (),
 ) = {
   context {
-    let theme = state("theme-state").final()
+    let theme = state("theme-state").get()
     set text(fill: theme.elem-fg)
 
     box(

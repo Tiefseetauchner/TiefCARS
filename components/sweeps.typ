@@ -2,7 +2,7 @@
 
 #let bottom-sweep(height, width, sweep-color, sweep-width: none, sweep-text: none) = {
   context {
-    let theme = state("theme-state").final()
+    let theme = state("theme-state").get()
     let sel-sweep-text
     if sweep-text == none {
       sel-sweep-text = random-string(1, 4732)
@@ -72,7 +72,7 @@
 
 #let top-sweep(height, width, sweep-color, sweep-width: none, sweep-text: none) = {
   context {
-    let theme = state("theme-state").final()
+    let theme = state("theme-state").get()
     let sel-sweep-text
     if sweep-text == none {
       sel-sweep-text = random-string(1, 4732)

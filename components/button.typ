@@ -1,6 +1,6 @@
 #let button(variant, inset: none, body) = {
   context {
-    let theme = state("theme-state").final()
+    let theme = state("theme-state").get()
     let selected-variant = theme.accent.at("a-" + str(variant))
     let sel-inset = if inset == none {
       (y: 8pt, x: 16pt)

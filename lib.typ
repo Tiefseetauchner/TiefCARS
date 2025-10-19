@@ -12,7 +12,7 @@
   core.apply-theme(theme)
 
   context {
-    let theme = theme-state.final()
+    let theme = theme-state.get()
     set text(font: "Antonio", size: 10.5pt, fill: theme.fg)
     set page(margin: 20pt, fill: theme.bg)
 
@@ -24,7 +24,7 @@
   sidebar.sidebar(top-height: top-height, button-texts: sidebar-button-texts)
 
   context {
-    let theme = theme-state.final()
+    let theme = theme-state.get()
     set text(fill: theme.heading, size: 40pt, weight: "bold")
     place(top + right, title)
   }
