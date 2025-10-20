@@ -12,61 +12,63 @@
 
     let sel-sweep-width = if sweep-width == none { width / 1.5 } else { sweep-width }
 
-    // Top left rounded corner
-    place(
-      bottom + left,
-      dy: height / 6,
-      box(
-        clip: true,
-        width: height / 1.5,
-        height: height / 1.5,
-        radius: height / 3,
-        // place(top + left, box(fill: sweep-color, width: height / 3, height: height / 3)),
-        [
-          #place(top + left, box(fill: sweep-color, width: height / 3, height: height / 6)),
-          #place(top + left, box(fill: sweep-color, width: height / 6, height: height / 3)),
-        ],
-      ),
-    )
-    // Fill to inner rounded corner
-    place(bottom + left, dy: -height / 6, dx: height / 6, box(
-      fill: sweep-color,
-      height: height / 6,
-      width: width - height / 6,
-    ))
-    // Right extending box
-    place(bottom + left, dy: -height / 3, dx: width, box(
-      fill: sweep-color,
-      height: height / 6,
-      width: sel-sweep-width,
-    ))
-    // Fill to right extending box
-    place(bottom + left, dy: -height / 3, dx: height / 3, box(
-      fill: sweep-color,
-      height: height / 6,
-      width: width - height / 3,
-    ))
-    // Fill for inner rounded corner
-    place(bottom + left, dy: -height * 3 / 12, dx: width, box(
-      fill: sweep-color,
-      width: height / 12,
-      height: height / 12,
-    ))
-    // Overlay for inner rounded corner
-    place(bottom + left, dy: -height / 6, dx: width, box(
-      fill: theme.bg,
-      width: height / 6,
-      height: height / 6,
-      radius: height / 12,
-    ))
-    // Bottom  box
-    place(bottom + left, box(
-      fill: sweep-color,
-      width: width,
-      height: height / 6,
-      inset: 5pt,
-      align(end + bottom, sel-sweep-text),
-    ))
+    set text(fill: theme.elem-fg)
+
+    box(height: height, width: width + sel-sweep-width, {
+      // Top left rounded corner
+      place(
+        top + left,
+        box(
+          clip: true,
+          width: height / .75,
+          height: height / .75,
+          radius: height / 1.5,
+          [
+            #place(top + left, box(fill: sweep-color, width: height / 1.5, height: height / 3)),
+            #place(top + left, box(fill: sweep-color, width: height / 3, height: height / 1.5)),
+          ],
+        ),
+      )
+      // Fill to inner rounded corner
+      place(top + left, dy: height / 3, dx: height / 3, box(
+        fill: sweep-color,
+        height: height / 3,
+        width: width - height / 3,
+      ))
+      // Right extending box
+      place(top + left, dx: width, box(
+        fill: sweep-color,
+        height: height / 3,
+        width: sel-sweep-width,
+      ))
+      // Fill to right extending box
+      place(top + left, dx: height / 1.5, box(
+        fill: sweep-color,
+        height: height / 3,
+        width: width - height / 3,
+      ))
+      // Fill for inner rounded corner
+      place(top + left, dy: height / 3, dx: width, box(
+        fill: sweep-color,
+        width: height / 6,
+        height: height / 6,
+      ))
+      // Overlay for inner rounded corner
+      place(top + left, dy: height / 3, dx: width, box(
+        fill: theme.bg,
+        width: height / 3,
+        height: height / 3,
+        radius: height / 6,
+      ))
+      // Bottom  box
+      place(bottom + left, box(
+        fill: sweep-color,
+        width: width,
+        height: height / 3,
+        inset: 5pt,
+        align(end + bottom, sel-sweep-text),
+      ))
+    })
   }
 }
 
@@ -82,48 +84,55 @@
 
     let sel-sweep-width = if sweep-width == none { width / 1.5 } else { sweep-width }
 
-    // Bottom Left rounded corner
-    place(top + left, dy: -height / 6, box(
-      clip: true,
-      width: height / 1.5,
-      height: height / 1.5,
-      radius: height / 3,
-      place(bottom + left, box(fill: sweep-color, width: height / 3, height: height / 3)),
-    ))
-    // Right extending box
-    place(top + left, dy: height / 3, dx: width, box(fill: sweep-color, height: height / 6, width: sel-sweep-width))
-    // Fill to right extending box
-    place(top + left, dy: height / 3, dx: height / 3, box(
-      fill: sweep-color,
-      height: height / 6,
-      width: width - height / 3,
-    ))
-    // Fill for inner rounded corner
-    place(top + left, dy: height * 3 / 12, dx: width, box(
-      fill: sweep-color,
-      width: height / 12,
-      height: height / 12,
-    ))
-    // Overlay for inner rounded corner
-    place(top + left, dy: height / 6, dx: width, box(
-      fill: theme.bg,
-      width: height / 6,
-      height: height / 6,
-      radius: height / 12,
-    ))
-    // Fill to inner rounded corner
-    place(top + left, dy: height / 6, dx: height / 6, box(
-      fill: sweep-color,
-      height: height / 6,
-      width: width - height / 6,
-    ))
-    // Top box
-    place(top + left, box(
-      fill: sweep-color,
-      width: width,
-      height: height / 6,
-      inset: 5pt,
-      align(end + bottom, sel-sweep-text),
-    ))
+    set text(fill: theme.elem-fg)
+
+    box(height: height, width: width + sel-sweep-width, {
+      // Bottom Left rounded corner
+      place(top + left, dy: -height / 3, box(
+        clip: true,
+        width: height / .75,
+        height: height / .75,
+        radius: height / 1.5,
+        [
+          #place(bottom + left, box(fill: sweep-color, width: height / 1.5, height: height / 3))
+          #place(bottom + left, box(fill: sweep-color, width: height / 3, height: height / 1.5))
+        ],
+      ))
+      // Right extending box
+      place(bottom + left, dx: width, box(fill: sweep-color, height: height / 3, width: sel-sweep-width))
+      // Fill to right extending box
+      place(bottom + left, dx: height / 1.5, box(
+        fill: sweep-color,
+        height: height / 3,
+        width: width - height / 1.5,
+      ))
+      // // Fill for inner rounded corner
+      place(bottom + left, dy: -height / 3, dx: width, box(
+        fill: sweep-color,
+        width: height / 6,
+        height: height / 6,
+      ))
+      // // Overlay for inner rounded corner
+      place(bottom + left, dy: -height / 3, dx: width, box(
+        fill: theme.bg,
+        width: height / 3,
+        height: height / 3,
+        radius: height / 6,
+      ))
+      // // Fill to inner rounded corner
+      place(bottom + left, dy: -height / 3, dx: height / 3, box(
+        fill: sweep-color,
+        height: height / 3,
+        width: width - height / 3,
+      ))
+      // // Top box
+      place(top + left, box(
+        fill: sweep-color,
+        width: width,
+        height: height / 3,
+        inset: 5pt,
+        align(end + top, sel-sweep-text),
+      ))
+    })
   }
 }

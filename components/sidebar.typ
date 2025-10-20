@@ -49,10 +49,10 @@
           sidebar-button-color-state.update(curr => next(curr))
           let sel-color-top = theme.accent.at("a-" + str(pick10(sidebar-button-color-state.get())))
 
-          top-sweep(height, width, sel-color-top, sweep-text: button-texts.at(
-              sidebar-button-index-state.get(),
-              default: random-string(1, sidebar-button-color-state.get()),
-            ))
+          top-sweep(height / 2, width, sel-color-top, sweep-text: button-texts.at(
+            sidebar-button-index-state.get(),
+            default: random-string(1, sidebar-button-color-state.get()),
+          ))
 
           sidebar-button-index-state.update(c => c + 1)
         }
@@ -61,10 +61,13 @@
           sidebar-button-color-state.update(curr => next(curr))
           let sel-color-bottom = theme.accent.at("a-" + str(pick10(sidebar-button-color-state.get())))
 
-          bottom-sweep(height, width, sel-color-bottom, sweep-text: button-texts.at(
-            sidebar-button-index-state.get(),
-            default: random-string(1, sidebar-button-color-state.get()),
-          ))
+          place(
+            bottom + left,
+            bottom-sweep(height / 2, width, sel-color-bottom, sweep-text: button-texts.at(
+              sidebar-button-index-state.get(),
+              default: random-string(1, sidebar-button-color-state.get()),
+            )),
+          )
 
           sidebar-button-index-state.update(c => c + 1)
         }
