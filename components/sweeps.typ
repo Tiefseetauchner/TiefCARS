@@ -1,6 +1,6 @@
 #import "../core/rnd.typ": *
 
-#let bottom-sweep(height, width, sweep-color, sweep-width: none, sweep-text: none) = {
+#let bottom-left-sweep(height, width, sweep-color, sweep-width: none, sweep-text: none) = {
   context {
     let theme = state("theme-state").get()
     let sel-sweep-text
@@ -72,7 +72,7 @@
   }
 }
 
-#let top-sweep(height, width, sweep-color, sweep-width: none, sweep-text: none) = {
+#let top-left-sweep(height, width, sweep-color, sweep-width: none, sweep-text: none) = {
   context {
     let theme = state("theme-state").get()
     let sel-sweep-text
