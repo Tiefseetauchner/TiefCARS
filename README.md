@@ -1,8 +1,10 @@
 # TiefCARS
 
+![Cover Image of TiefCARS, showcasing the different modes](./cover.png)
+
 > The worst way to format *your* document
 
-Have you ever wondered "Why did no one make a template for LCARS yet?"
+Have you ever wondered, "Why did no one make a template for LCARS yet?"
 
 Well, simply because it's a pain. There's so many curves. So much sufferage.
 
@@ -16,31 +18,53 @@ To use TiefCARS with the Typst web app, choose “Start from template” and sel
 To import the package manually in your Typst project, use:
 
 ```typst
-#import "@preview/tiefcars:0.1.0": default-layout, tiefcars
+#import "@preview/tiefcars:0.1.0": *
 ```
 
-The easiest way to get started is to use the following lines:
+The easiest way to get started is to use first select a theme:
 
 ```typst
-/* === Set up lcars with your theme === */
 #show: tiefcars.with(theme: "tng")
+```
 
-/* === Enable the default layout === */
-#show: default-layout.with(
-    /* === The title of the document, fancyful and amazing */
-  title: [TiefCARS],
-  subtitle-text: [
-    /* === Text displayed in the top part under the title */
-    Bla bla
-  ]
+Then, you can enable layouting:
+
+```typst
+// Enables multi page layout with left bound buttons
+#show: multi-page-layout(
+  title: [This Document Is Amazing], // A title displayed on the first page of the mult-page-layout
 )
 
 Your content
 ```
 
-This creates a default layout. You can also build your own layout using the `sidebar` and `buttons` components.
+This creates a default layout, giving you access to a left bound LCARS interface. Headings with level one are currently implemented to be special, but this may change.
 
-How I shan't explain.
+You can also create a title page / single page document using `single-page-layout`:
+
+```typst
+#show: single-page-layout(
+  title: [This Document Is Amazing], // A title displayed on the top right corner of the page
+  subtitle-text: [Your subtitle text.], // A subtitle text. This should fill up the rest of the interface to avoid it looking empty.
+  top-height: 4, // This defines how many buttons (rectangles) will be displayed on the left bar before 
+)
+
+Your content
+```
+
+## Examples
+
+![Example for multi-page-layout with left only binding](examples/ex1.png)
+
+Example for multi-page-layout with left only binding.
+
+![Example for multi-page-layout with alternating binding](examples/ex2.png)
+
+Example for multi-page-layout with alternating binding.
+
+![Example for single-page-layout with different themes](examples/ex3.png)
+
+Example for single-page-layout with different themes.
 
 ## License and Contributions
 
