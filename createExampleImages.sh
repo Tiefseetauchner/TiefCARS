@@ -4,7 +4,7 @@ set -e
 SHADOW="70x10+0+0"
 
 function createImage() {
-  typst c examples/$1.typ examples/$1.c.pdf
+  typst c examples/$1.typ examples/$1.c.pdf --font-path test/antonio
 
   magick -density 600 examples/$1.c.pdf -background white -alpha off -resize 25% "test/page.png" # 150dpi -> 1240x1754 for A4
   # magick -density 150 examples/$1.c.pdf -background white -alpha off "test/page.png" # 150dpi -> 1240x1754 for A4

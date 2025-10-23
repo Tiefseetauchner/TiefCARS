@@ -163,6 +163,47 @@
 
       = Content
       ```
+
+      #pagebreak()
+
+      = Theming
+
+      TiefCARS offers multiple ways of theming, among them preset themes as well as creating a custom theme.
+
+      Preset themes are selected with the `theme` parameter of the `tiefcars` function:
+
+      ```typst
+      #show: tiefcars.with(theme: "nemesis-blue")
+      ```
+
+      See the example 3 in `examples/` for the available themes.
+
+      You can also include a custom theme:
+
+      ```typst
+      #show: tiefcars.with(theme: (
+        accent: (
+          a-0: color.rgb("cc99ff"),
+          a-1: color.rgb("ffaa90"),
+          a-2: color.rgb("ffbbaa"),
+          a-3: color.rgb("ff8866"),
+          a-4: color.rgb("8899ff"),
+          a-5: color.rgb("cc5599"),
+          a-6: color.rgb("ffaa00"),
+          a-7: color.rgb("f5f6fa"),
+          a-8: color.rgb("666688"),
+          a-9: color.rgb("99ccff"),
+        ),
+        red: color.rgb("cc4444"),
+        green: color.rgb("999933"),
+        heading: color.rgb("ffaa00"),
+        bg: luma(5%),
+        fg: white,
+        elem-fg: black,
+      ))
+      ```
+
+      Note that *all fields are required for the template to compile*!
     ]
 
     #set page(width: 100mm, height: 100mm)
