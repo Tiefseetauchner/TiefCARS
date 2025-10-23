@@ -62,7 +62,9 @@
 )
 
 #let apply-theme(theme) = {
-  let selected-theme = if theme == "tng" {
+  let selected-theme = if type(theme) == dictionary {
+    theme
+  } else if theme == "tng" {
     tng-theme-dark
   } else if theme == "tng-l" {
     tng-theme-light

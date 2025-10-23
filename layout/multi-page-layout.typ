@@ -206,7 +206,7 @@
                         #stack(dir: ltr, spacing: 5pt)[
                           #box(radius: (left: 10pt), height: 20pt, width: 20pt, fill: theme.heading)
                         ][
-                          #set text(size: 23pt, fill: theme.heading)
+                          #set text(size: 23pt, fill: theme.heading, weight: "black")
                           #title
                         ][
                           #box(radius: (right: 10pt), height: 20pt, width: 20pt, fill: theme.heading)
