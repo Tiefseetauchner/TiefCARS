@@ -203,7 +203,20 @@
       ))
       ```
 
-      Note that *all fields are required for the template to compile*!
+      When you provide a theme dictionary without a base, *all fields are still required* for the template to compile!
+
+      You can also extend an existing preset and only override the bits you care about:
+
+      ```typst
+      #show: tiefcars.with(theme: (
+        extends: "tng",
+        heading: color.rgb("ff6600"),
+        accent: (
+          a-3: color.rgb("ff7744"),
+          a-7: color.rgb("ffffff"),
+        ),
+      ))
+      ```
     ]
 
     #set page(width: 100mm, height: 100mm)
