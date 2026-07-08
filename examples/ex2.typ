@@ -1,4 +1,4 @@
-#import "@preview/tiefcars:0.2.0": *
+#import "@preview/tiefcars:0.2.1": *
 
 #show: tiefcars.with(theme: "tng")
 #show: multi-page-layout.with(
